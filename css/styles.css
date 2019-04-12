@@ -10,3 +10,16 @@
 #cont1, #cont2, #cont3, #cont4, #cont5, #cont6, #cont7, #cont8, #cont9 {
   display: none;
 }
+
+#show-pizza{
+  font-size: 20px;
+  border: 1px solid black;
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: space-around;
+}
+#costA {
+  color: red;
+  font-weight: bolder;
+}

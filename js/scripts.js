@@ -21,8 +21,20 @@ function Order(size, topName, totalPrice, target){
 function printOrder(printPizza){
   var pizzaList = $("#show-pizza");
   var pizzaHtml = "";
+    var nameArr = ["Pepperoni", "Mushroom", "Olive", "Bell Pepper", "Onion", "Sausage", "Anchovie", "Pineapple", "Ham"];
+    var count = 0;
+
   printPizza.orders.forEach(function(order){
-    pizzaHtml += "<p id =" + order.id +">" + order.size + " pizza with: " + order.topName + "<br> Your total is: $" + order.totalPrice;
+    for(var i = 0; i < nameArr.length; i++){
+      if(order.topName.includes(nameArr[i])){
+        count++;
+      };
+    };
+    if(count > 0){
+    pizzaHtml += "<p id =" + order.id +">" + order.size + " Cheese pizza with: " + order.topName + "<br> Your total is: $<span id = 'costA'>" + order.totalPrice + "</span></p>";
+    }else {
+      pizzaHtml += "<p id =" + order.id +">" + order.size + " Cheese pizza with: Nothing" + "<br> Your total is: $<span id = 'costA'>" + order.totalPrice + "</span></p>";
+    };
   });
 pizzaList.html(pizzaHtml);
 };
@@ -104,6 +116,7 @@ function plusMinusToppings(order){
       order.topName += num + "x: " + nameArr[order.target - 1] + ", ";
       order.totalPrice += num*10;
     };
+
   });
 };
 function orderOp(newOrder){
@@ -124,18 +137,14 @@ var pizza = new Pizza();
 $(function(){
   var newOrder = new Order(" ", " ", 0, 0);
   var count = 0;
-
+  pizza.addPizza(newOrder);
   plusMinus(newOrder);
   orderOp(newOrder);
   $("#save0").click(function(){
     newOrder.size = this.size;
   });
 
-
-//  plusMinusToppings(newOrder);
-
   $("#btnSubmit").on("click", function(event){
-      pizza.addPizza(newOrder);
       printOrder(pizza);
       event.preventDefault();
   });
