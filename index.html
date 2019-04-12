@@ -2,9 +2,30 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media = "all">
+    <script src="js/scripts.js"></script>
     <title>Pizza Shop</title>
   </head>
   <body>
+    <form id="formOne">
 
+      <div class="container">
+        <span id ="sizeMinus" class = "btn btn-info"> - </span><span id = "size" class = "btn btn-default"></span><span id ="sizePlus" class = "btn btn-info"> + </span>
+      </div>
+      <br>
+      <br>
+      <div class="container">
+        <button type="submit" id = "btnSubmit" class = "btn btn-danger" name = "button">$5</button>
+
+      </div>
+    </form>
+    <div class="container">
+      <span id = "print"></span>
+    </div>
   </body>
 </html>
