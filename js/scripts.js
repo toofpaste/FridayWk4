@@ -30,53 +30,113 @@ pizzaList.html(pizzaHtml);
 };
 
 
-function plusMinus(){
+function plusMinus(order){
   var num = 0;
+  var pSize = "Small";
   $("#size").text("Small");
-  $("#sizePlus").click(function() {
+  $("#sizePlus").on("click", function() {
+
     if(num < 3 && num >= 0){
       num++;
       if(num === 0){
         $("#size").text(" Small ");
+        pSize = "Small"
       }else if(num === 1){
         $("#size").text(" Medium");
+        pSize = "Medium";
       }else if(num === 2){
         $("#size").text(" Large ");
+        pSize = "Large"
       }else if(num === 3){
         $("#size").text("X-Large");
+        pSize = "X-Large"
       };
-      console.log("+" + num);
-      submit(num);
     };
   });
-  $("#sizeMinus").click(function() {
+  $("#sizeMinus").on("click", function() {
+
     if(num <= 3 && num > 0){
       num--;
       if(num === 0){
-        $("#size").text("Small");
+        $("#size").text(" Small ");
+        pSize = "Small"
       }else if(num === 1){
-        $("#size").text("Medium");
+        $("#size").text(" Medium");
+        pSize = "Medium";
       }else if(num === 2){
-        $("#size").text("Large");
+        $("#size").text(" Large ");
+        pSize = "Large"
       }else if(num === 3){
         $("#size").text("X-Large");
+        pSize = "X-Large"
       };
-      console.log("-:" + num);
-      submit(num);
     };
+  });
+  $("#saveBtn").on("click", function() {
+    this.size = pSize;
+  });
+};
+//pep mush olive bell onion saus anch pine ham
+function plusMinusToppings(order){
+  var num = 0;
+  var topList = "";
+  $("#size").text(num);
+  $("#sizePlus").on("click", function() {
+
+    if(num < 3 && num >= 0){
+      num++;
+      if(num === 0){
+        $("#size").text(num);
+        pSize = "Small"
+      }else if(num === 1){
+        $("#size").text(num);
+        pSize = "Medium";
+      }else if(num === 2){
+        $("#size").text(num);
+        pSize = "Large"
+      }else if(num === 3){
+        $("#size").text(num);
+        pSize = "X-Large"
+      };
+    };
+  });
+  $("#sizeMinus").on("click", function() {
+
+    if(num <= 3 && num > 0){
+      num--;
+      if(num === 0){
+        $("#size").text(num);
+        pSize = "Small"
+      }else if(num === 1){
+        $("#size").text(num);
+        pSize = "Medium";
+      }else if(num === 2){
+        $("#size").text(num);
+        pSize = "Large"
+      }else if(num === 3){
+        $("#size").text(num);
+        pSize = "X-Large"
+      };
+    };
+  });
+  $("#saveBtn").on("click", function() {
+    this.size = pSize;
   });
 };
 
-function submit(num){
-  $("form#formOne").submit(function(event){
-    event.preventDefault();
-  });
-}
-
 var pizza = new Pizza();
 $(function(){
-  plusMinus();
-  var newOrder = new Order("Large", "Pepperoni", 35);
+  var newOrder = new Order("", "", 0);
   pizza.addPizza(newOrder);
-  printOrder(pizza);
+  plusMinus(newOrder);
+  $("#saveBtn").on("click", function() {
+    console.log(this.size);
+    newOrder.size = this.size;
+  });
+  $("#btnSubmit").on("click", function(event){
+      printOrder(pizza);
+      event.preventDefault();
+  });
+
+
 });
