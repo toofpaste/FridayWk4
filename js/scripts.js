@@ -22,7 +22,7 @@ function printOrder(printPizza){
   var pizzaList = $("#show-pizza");
   var pizzaHtml = "";
   printPizza.orders.forEach(function(order){
-    pizzaHtml += "<p id =" + order.id +">" + order.size + " " + order.topName + " " + order.totalPrice;
+    pizzaHtml += "<p id =" + order.id +">" + order.size + " pizza with: " + order.topName + "<br> Your total is: $" + order.totalPrice;
   });
 pizzaList.html(pizzaHtml);
 };
@@ -72,6 +72,15 @@ function plusMinus(order){
   });
   $("#save0").on("click", function() {
     this.size = pSize;
+    if(pSize === "Small"){
+      order.totalPrice = 10;
+    }else if(pSize === "Medium"){
+      order.totalPrice = 15;
+    }else if(pSize === "Large"){
+      order.totalPrice = 20;
+    }else if(pSize === "X-Large"){
+      order.totalPrice = 500;
+    };
   });
 };
 //pep mush olive bell onion saus anch pine ham
@@ -115,7 +124,7 @@ var pizza = new Pizza();
 $(function(){
   var newOrder = new Order(" ", " ", 0, 0);
   var count = 0;
-  pizza.addPizza(newOrder);
+
   plusMinus(newOrder);
   orderOp(newOrder);
   $("#save0").click(function(){
@@ -126,9 +135,11 @@ $(function(){
 //  plusMinusToppings(newOrder);
 
   $("#btnSubmit").on("click", function(event){
+      pizza.addPizza(newOrder);
       printOrder(pizza);
       event.preventDefault();
   });
+
 
 
 });
