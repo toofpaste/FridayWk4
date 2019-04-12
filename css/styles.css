@@ -1,8 +1,12 @@
-#sizeMinus{
+#Minus0{
   font-size: 20px;
   cursor: pointer;
 }
-#sizePlus {
+#Plus0 {
   font-size: 20px;
   cursor: pointer;
+}
+
+#cont1, #cont2, #cont3, #cont4, #cont5, #cont6, #cont7, #cont8, #cont9 {
+  display: none;
 }
