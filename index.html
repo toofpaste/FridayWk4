@@ -9,73 +9,114 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css" type="text/css" media = "all">
     <script src="js/scripts.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
     <title>Pizza Shop</title>
   </head>
   <body>
+    <nav class="navbar navbar-dark bg-success">
+      <h1 id = "title1">Welcome to, Costa Lotta Pizza</h1>
+    </nav>
+    <div class="nav-side-menu">
+  <div class="brand">Costa Lotta Pizza</div>
+  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  <div class="menu-list">
+      <ul id="menu-content" class="menu-content collapse out">
+          <li>
+              <a href="#">
+                  <i class="fa fa-dashboard fa-lg"></i> This Does Nothing
+              </a>
+          </li>
+          <li data-toggle="collapse" data-target="#products" class="collapsed active">
+              <a href="#"><i class="fa fa-gift fa-lg"></i> But it <span class="arrow"></span></a>
+          </li>
+          <li data-toggle="collapse" data-target="#service" class="collapsed">
+              <a href="#"><i class="fa fa-globe fa-lg"></i> Looks kinda <span class="arrow"></span></a>
+          </li>
+          <li data-toggle="collapse" data-target="#new" class="collapsed">
+              <a href="#"><i class="fa fa-car fa-lg"></i> Nice right? <span class="arrow"></span></a>
+          </li>
+          <li>
+              <a href="#">
+                  <i class="fa fa-user fa-lg"></i> Might just
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <i class="fa fa-users fa-lg"></i> Remove Later
+              </a>
+          </li>
+      </ul>
+  </div>
+</div>
+<div class="container" id = "main">
+<div class="row">
+  <div class="col-md-12">
     <form id="formOne">
+        <div class="container">
+            <h4 id = "pickSize">Pick your Pizza Size</h4>
+            <button type="button" name="button" id = "save0" class = "btn btn-danger">SAVE</button>
+            <span id ="Minus0" class = "btn btn-info"> - </span><span id = "size0" class = "btn btn-default"></span><span id ="Plus0" class = "btn btn-info"> + </span>
+          </div>
+                <div class="container" id = "cont1">
+                  <h4 id = "pickSize1">Choose Your Toppings: <br> Toppings are $10 each</h4>
+                  <button type="button" name="button"id = "save1" class = "btn btn-danger">SAVE</button>
+                  <span id ="Minus1" class = "btn btn-success"> - </span><span id = "size1" class = "btn btn-default"></span><span id ="Plus1" class = "btn btn-success"> + </span> <span class = "itemName"> Pepperoni </span><ul id = "li1"></ul>
+                </div>
 
-      <div class="container">
-        <h4>Pick your Pizza Size</h4>
-        <button type="button" name="button" id = "save0" class = "btn btn-danger">SAVE</button>
-        <span id ="Minus0" class = "btn btn-info"> - </span><span id = "size0" class = "btn btn-default"></span><span id ="Plus0" class = "btn btn-info"> + </span>
-      </div>
+                <div class="container" id = "cont2">
+                  <button type="button" name="button"id = "save2" class = "btn btn-danger">SAVE</button>
+                  <span id ="Minus2" class = "btn btn-success"> - </span><span id = "size2" class = "btn btn-default"></span><span id ="Plus2" class = "btn btn-success"> + </span> <span class = "itemName"> Mushrooms </span><ul id = "li2"></ul>
+                </div>
+
+                <div class="container" id = "cont3">
+                  <button type="button" name="button"id = "save3" class = "btn btn-danger">SAVE</button>
+                  <span id ="Minus3" class = "btn btn-success"> - </span><span id = "size3" class = "btn btn-default"></span><span id ="Plus3" class = "btn btn-success"> + </span> <span class = "itemName"> Olives </span><ul id = "li3"></ul>
+                </div>
+
+                <div class="container" id = "cont4">
+                  <button type="button" name="button"id = "save4" class = "btn btn-danger">SAVE</button>
+                  <span id ="Minus4" class = "btn btn-success"> - </span><span id = "size4" class = "btn btn-default"></span><span id ="Plus4" class = "btn btn-success"> + </span> <span class = "itemName"> Bell Peppers </span><ul id = "li4"></ul>
+                </div>
+
+                <div class="container" id = "cont5">
+                  <button type="button" name="button"id = "save5" class = "btn btn-danger">SAVE</button>
+                  <span id ="Minus5" class = "btn btn-success"> - </span><span id = "size5" class = "btn btn-default"></span><span id ="Plus5" class = "btn btn-success"> + </span> <span class = "itemName"> Onions </span><ul id = "li5"></ul>
+                </div>
+
+                <div class="container" id = "cont6">
+                  <button type="button" name="button"id = "save6" class = "btn btn-danger">SAVE</button>
+                  <span id ="Minus6" class = "btn btn-success"> - </span><span id = "size6" class = "btn btn-default"></span><span id ="Plus6" class = "btn btn-success"> + </span> <span class = "itemName"> Sausage </span><ul id = "li6"></ul>
+                </div>
+
+                <div class="container" id = "cont7">
+                  <button type="button" name="button"id = "save7" class = "btn btn-danger">SAVE</button>
+                  <span id ="Minus7" class = "btn btn-success"> - </span><span id = "size7" class = "btn btn-default"></span><span id ="Plus7" class = "btn btn-success"> + </span> <span class = "itemName"> Anchovies </span><ul id = "li7"></ul>
+                </div>
+
+                <div class="container" id = "cont8">
+                  <button type="button" name="button"id = "save8" class = "btn btn-danger">SAVE</button>
+                  <span id ="Minus8" class = "btn btn-success"> - </span><span id = "size8" class = "btn btn-default"></span><span id ="Plus8" class = "btn btn-success"> + </span> <span class = "itemName"> Pineapple </span><ul id = "li8"></ul>
+                </div>
 
 
-      <div class="container" id = "cont1">
-        <h4>Choose Your Toppings: Toppings are $10 each</h4>
-        <button type="button" name="button"id = "save1" class = "btn btn-danger">SAVE1</button>
-        <span id ="Minus1" class = "btn btn-success"> - </span><span id = "size1" class = "btn btn-default"></span><span id ="Plus1" class = "btn btn-success"> + </span> <span id = "itemName"> Pepperoni </span>
-      </div>
+                <div class="container" id = "cont9">
+                  <button type="button" name="button"id = "save9" class = "btn btn-danger">SAVE</button>
+                  <span id ="Minus9" class = "btn btn-success"> - </span><span id = "size9" class = "btn btn-default"></span><span id ="Plus9" class = "btn btn-success"> + </span> <span class = "itemName"> Ham </span><ul id = "li9"></ul>
+                </div>
 
-      <div class="container" id = "cont2">
-        <button type="button" name="button"id = "save2" class = "btn btn-danger">SAVE2</button>
-        <span id ="Minus2" class = "btn btn-success"> - </span><span id = "size2" class = "btn btn-default"></span><span id ="Plus2" class = "btn btn-success"> + </span> <span id = "itemName"> Mushrooms </span>
-      </div>
+                <br>
+                <br>
+                <div class="container">
+                  <button type="submit" id = "btnSubmit" class = "btn btn-danger" name = "button">Submit</button>
+                </div>
+          </form>
+          <div class="container">
+            <div id="show-pizza">
 
-      <div class="container" id = "cont3">
-        <button type="button" name="button"id = "save3" class = "btn btn-danger">SAVE3</button>
-        <span id ="Minus3" class = "btn btn-success"> - </span><span id = "size3" class = "btn btn-default"></span><span id ="Plus3" class = "btn btn-success"> + </span> <span id = "itemName"> Olives </span>
-      </div>
-
-      <div class="container" id = "cont4">
-        <button type="button" name="button"id = "save4" class = "btn btn-danger">SAVE4</button>
-        <span id ="Minus4" class = "btn btn-success"> - </span><span id = "size4" class = "btn btn-default"></span><span id ="Plus4" class = "btn btn-success"> + </span> <span id = "itemName"> Bell Peppers </span>
-      </div>
-
-      <div class="container" id = "cont5">
-        <button type="button" name="button"id = "save5" class = "btn btn-danger">SAVE5</button>
-        <span id ="Minus5" class = "btn btn-success"> - </span><span id = "size5" class = "btn btn-default"></span><span id ="Plus5" class = "btn btn-success"> + </span> <span id = "itemName"> Onions </span>
-      </div>
-
-      <div class="container" id = "cont6">
-        <button type="button" name="button"id = "save6" class = "btn btn-danger">SAVE6</button>
-        <span id ="Minus6" class = "btn btn-success"> - </span><span id = "size6" class = "btn btn-default"></span><span id ="Plus6" class = "btn btn-success"> + </span> <span id = "itemName"> Sausage </span>
-      </div>
-
-      <div class="container" id = "cont7">
-        <button type="button" name="button"id = "save7" class = "btn btn-danger">SAVE7</button>
-        <span id ="Minus7" class = "btn btn-success"> - </span><span id = "size7" class = "btn btn-default"></span><span id ="Plus7" class = "btn btn-success"> + </span> <span id = "itemName"> Anchovies </span>
-      </div>
-
-      <div class="container" id = "cont8">
-        <button type="button" name="button"id = "save8" class = "btn btn-danger">SAVE8</button>
-        <span id ="Minus8" class = "btn btn-success"> - </span><span id = "size8" class = "btn btn-default"></span><span id ="Plus8" class = "btn btn-success"> + </span> <span id = "itemName"> Pineapple </span>
-      </div>
-
-      <div class="container" id = "cont9">
-        <button type="button" name="button"id = "save9" class = "btn btn-danger">SAVE9</button>
-        <span id ="Minus9" class = "btn btn-success"> - </span><span id = "size9" class = "btn btn-default"></span><span id ="Plus9" class = "btn btn-success"> + </span> <span id = "itemName"> Ham </span>
-      </div>
-
-      <br>
-      <br>
-      <div class="container">
-        <button type="submit" id = "btnSubmit" class = "btn btn-danger" name = "button">Submit</button>
-      </div>
-    </form>
-    <div class="container">
-      <div id="show-pizza">
-
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

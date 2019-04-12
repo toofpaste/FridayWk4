@@ -31,9 +31,9 @@ function printOrder(printPizza){
       };
     };
     if(count > 0){
-    pizzaHtml += "<p id =" + order.id +">" + order.size + " Cheese pizza with: " + order.topName + "<br> Your total is: $<span id = 'costA'>" + order.totalPrice + "</span></p>";
+    pizzaHtml += "<p id =" + order.id +">" + order.size + " Cheese pizza with: <br>" + order.topName + "<br> Your total is: $<span id = 'costA'>" + order.totalPrice + "</span></p>";
     }else {
-      pizzaHtml += "<p id =" + order.id +">" + order.size + " Cheese pizza with: Nothing" + "<br> Your total is: $<span id = 'costA'>" + order.totalPrice + "</span></p>";
+      pizzaHtml += "<p id =" + order.id +">" + order.size + " Cheese pizza with: No Toppings" + "<br> Your total is: $<span id = 'costA'>" + order.totalPrice + "</span></p>";
     };
   });
 pizzaList.html(pizzaHtml);
@@ -102,18 +102,21 @@ function plusMinusToppings(order){
   var topList = "";
   $("#size" + order.target).text(num);
   $("#Plus" + order.target).on("click", function() {
+      $("#li" + order.target).append("<li><img id = 'lis" + num + "'src = 'img/img"+order.target+".png' alt = 'food'></li>");
       num++;
       $("#size" + order.target).text(num);
+
   });
   $("#Minus" + order.target).on("click", function() {
     if(num > 0){
       num--;
       $("#size" + order.target).text(num);
+      $("#lis" + num).remove();
     };
   });
   $("#save" + order.target).on("click", function() {
     if(num != 0){
-      order.topName += num + "x: " + nameArr[order.target - 1] + ", ";
+      order.topName += num + "x: " + nameArr[order.target - 1] + "<br>";
       order.totalPrice += num*10;
     };
 
@@ -141,6 +144,7 @@ $(function(){
   plusMinus(newOrder);
   orderOp(newOrder);
   $("#save0").click(function(){
+    $("#btnSubmit").show();
     newOrder.size = this.size;
   });
 
